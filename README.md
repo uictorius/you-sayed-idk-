@@ -52,7 +52,7 @@ Project settings are included in `.vscode/settings.json`:
 
 ```
 
-you-sayed-idk/
+you-sayed-idk-/
 ├── Cargo.lock
 ├── Cargo.toml
 ├── i18n
