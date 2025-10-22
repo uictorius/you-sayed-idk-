@@ -1,6 +1,6 @@
 [package]
 name = "you-sayed-idk-"
-version = "2.0.1"
+version = "3.0.0"
 edition = "2024"
 description = "A Rust-based command-line shell that integrates system command execution (like ls and echo) with unique text recognition features (like variations of 'idk')."
 license = "MIT"
