@@ -1,6 +1,6 @@
 [package]
 name = "you-sayed-idk-"
-version = "2.0.0"
+version = "2.0.1"
 edition = "2024"
 description = "A simple Rust program that detects variations of 'idk' in user input."
 license = "MIT"
