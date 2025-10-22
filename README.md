@@ -1,26 +1,22 @@
-# you-sayed-idk-
+# idk-shell
 
 [![Rust](https://img.shields.io/badge/rust-1.90.0-brightgreen)](https://www.rust-lang.org/)
 [![CI](https://github.com/uictorius/you-sayed-idk-/actions/workflows/ci.yml/badge.svg)](https://github.com/uictorius/you-sayed-idk-/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Release](https://img.shields.io/github/v/release/uictorius/you-sayed-idk-?label=release)](https://github.com/uictorius/you-sayed-idk-/releases)
 
-A Rust program that reads a line of text and checks if the input is a variation of `"idk"`.  
-It supports multiple languages and recognizes variations like:
-
-- `idk`, `Idk`, `iDK`
-- `idka`, `ikd!`
-- `idkdepressivo`
+A **Rust-based command-line shell** that integrates system command execution (like `ls` and `echo`) with **unique text recognition features** (like variations of `"idk"`).
 
 ---
 
 ## Features
 
-- Multi-language support (i18n)
-- Input validation with multiple "idk" variations
-- Colored console output
-- Pre-commit hooks for formatting and linting
-- Easy extension for new languages
+- **Shell Functionality:** Executes external system commands and basic internal commands (`echo`, `ls`).
+- **Custom Recognition:** Maintains legacy recognition for "idk" variations (e.g., `idk`, `idka`, `idkdepressivo`).
+- Multi-language support (i18n) for system messages.
+- Colored console output with a bold prompt (`idk@shell:~$`).
+- Pre-commit hooks for formatting and linting.
+- Easy extension for new languages.
 
 ---
 
@@ -64,7 +60,7 @@ you-sayed-idk-/
 ├── LICENSE
 ├── README.md
 └── src
-    ├── checks.rs
+    ├── commands.rs
     ├── main.rs
     ├── print.rs
     ├── prompt.rs
@@ -73,8 +69,8 @@ you-sayed-idk-/
 ```
 
 - `src/main.rs` → main entry point
-- `i18n/` → translation files
-- `src/` → modularized code (checks, printing, prompts, translations)
+- `i18n/` → translation files for shell messages
+- `src/` → modularized code (shell commands, checks, printing, prompts, translations)
 
 ---
 
@@ -88,6 +84,15 @@ cargo build --release
 
 # Run the project
 cargo run
+```
+
+**Usage Example:**
+
+```bash
+idk@shell:~$ echo Hello, world!
+Hello, world!
+idk@shell:~$ idk_mode idk
+You said 'idk'.
 ```
 
 ---
