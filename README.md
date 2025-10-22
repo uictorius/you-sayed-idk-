@@ -127,6 +127,26 @@ cargo clippy
 
 ---
 
+## Git Hooks (Automatic Formatting & Linting)
+
+To ensure consistent code quality across all environments, this project uses a versioned **Git hook** stored in `.githooks/pre-commit`.
+The hook automatically runs `cargo fmt` and `cargo clippy` before each commit.
+
+### Setup
+
+After cloning the repository, run:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This tells Git to use the versioned hook directory instead of the default `.git/hooks/`.
+
+You only need to do this once per local clone.
+After that, every commit will automatically check formatting and linting.
+
+---
+
 ## Internationalization (i18n)
 
 The project now includes full multi-language support.
