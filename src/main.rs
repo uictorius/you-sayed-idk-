@@ -4,9 +4,7 @@ fn main() {
     println!("Por favor, digite algo:");
 
     let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Falha ao ler a linha");
+    io::stdin().read_line(&mut input).expect("Falha ao ler a linha");
 
     let input = input.trim();
 
