@@ -53,11 +53,27 @@ Project settings are included in `.vscode/settings.json`:
 ```
 
 you-sayed-idk/
+├── Cargo.lock
 ├── Cargo.toml
+├── i18n
+│   ├── ar.toml
+│   ├── bn.toml
+│   ├── en.toml
+│   ├── es.toml
+│   ├── hi.toml
+│   ├── ja.toml
+│   ├── pa.toml
+│   ├── pt.toml
+│   ├── ru.toml
+│   └── zh.toml
 ├── LICENSE
 ├── README.md
-└── src/
-└── main.rs
+└── src
+    ├── checks.rs
+    ├── main.rs
+    ├── print.rs
+    ├── prompt.rs
+    └── translations.rs
 
 ```
 
@@ -108,6 +124,37 @@ cargo clippy
 - `chore:` → project structure, tooling, etc.
 - `style:` → formatting changes
 - `refactor:` → refactoring without changing behavior
+
+---
+
+## Internationalization (i18n)
+
+The project now includes full multi-language support.
+
+All user-facing messages are stored in the `i18n/` directory, each language using a `.toml` file.  
+The application automatically detects the system language and loads the appropriate translation file.
+
+### Supported languages
+
+| Language             | Code | File           |
+| -------------------- | ---- | -------------- |
+| Arabic               | `ar` | `i18n/ar.toml` |
+| Bengali              | `bn` | `i18n/bn.toml` |
+| English              | `en` | `i18n/en.toml` |
+| Spanish              | `es` | `i18n/es.toml` |
+| Hindi                | `hi` | `i18n/hi.toml` |
+| Japanese             | `ja` | `i18n/ja.toml` |
+| Punjabi              | `pa` | `i18n/pa.toml` |
+| Portuguese           | `pt` | `i18n/pt.toml` |
+| Russian              | `ru` | `i18n/ru.toml` |
+| Chinese (Simplified) | `zh` | `i18n/zh.toml` |
+
+If the system language is not recognized, the default fallback is **English (en)**.
+
+Developers can easily extend support for new languages by:
+
+1. Creating a new `.toml` file inside `i18n/`.
+2. Adding the corresponding language code in `translations.rs`.
 
 ---
 
