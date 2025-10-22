@@ -3,7 +3,7 @@
 [![Rust](https://img.shields.io/badge/rust-1.90.0-brightgreen)](https://www.rust-lang.org/)
 [![CI](https://github.com/uictorius/you-sayed-idk-/actions/workflows/ci.yml/badge.svg)](https://github.com/uictorius/you-sayed-idk-/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Release](https://img.shields.io/github/v/release/uictorius/you-sayed-idk-)](https://github.com/uictorius/you-sayed-idk-/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/uictorius/you-sayed-idk-?label=release)](https://github.com/uictorius/you-sayed-idk-/releases)
 
 A program to read a line of text and verify if the input is a variation of "idk".
 
