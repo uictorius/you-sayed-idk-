@@ -1,0 +1,9 @@
+[package]
+name = "you-sayed-idk-"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[package.metadata.alias]
+fmt = "fmt --all"
