@@ -21,6 +21,7 @@ For the best experience, it is recommended to use **VSCode** with these extensio
 
 - [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) → language support, formatting, Clippy integration
 - [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) → TOML syntax highlighting
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) → auto-format Markdown, JSON, YAML, and other files
 
 Project settings are included in `.vscode/settings.json`:
 
