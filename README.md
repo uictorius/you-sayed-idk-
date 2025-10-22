@@ -1,23 +1,116 @@
-# you-sayed-idk-
-u say idk? 
+# you-sayed-idk
 
-This is a program to read a line of text and verify if the input is a variation of "idk".
+[![Rust](https://img.shields.io/badge/rust-1.90.0-brightgreen)](https://www.rust-lang.org/)
+[![CI](https://github.com/uictorius/you-sayed-idk/actions/workflows/ci.yml/badge.svg)](https://github.com/uictorius/you-sayed-idk/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Release](https://img.shields.io/github/v/release/seu-usuario/you-sayed-idk)](https://github.com/uictorius/you-sayed-idk/releases)
 
-can identify various "idk" like: 
+A program to read a line of text and verify if the input is a variation of "idk".
 
-idk, Idk, iDK, etc. idka, ikd! etc. and idkdepressivo.
+It can identify variations like:
 
-its need use the rust compiler (`rustc`) installed, u can install on [rustup](https://rustup.rs/).
+- `idk`, `Idk`, `iDK`, etc.
+- `idka`, `ikd!`, etc.
+- `idkdepressivo`
 
-```bash
-rustc main.rs
+---
+
+## Recommended VSCode Setup
+
+For the best experience, it is recommended to use **VSCode** with these extensions:
+
+- [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) → language support, formatting, Clippy integration
+- [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) → TOML syntax highlighting
+
+Project settings are included in `.vscode/settings.json`:
+
+- Auto-format Rust, TOML, Markdown, JSON, and YAML on save
+- Run Clippy on Rust files when saving
+- YAML files recognized for `.yml` and `.yaml`
+
+---
+
+## Requirements
+
+- Rust toolchain via [rustup](https://rustup.rs/)
+- Recommended tools:
+  - `cargo fmt` → format code
+  - `cargo clippy` → lint and suggestions
+
+---
+
+## Project Structure
+
 ```
 
-will gen a `main`.
+you-sayed-idk/
+├── Cargo.toml
+├── LICENSE
+├── README.md
+└── src/
+└── main.rs
 
-to execute program use 
+```
+
+- `src/main.rs` → main entry point
+- `Cargo.toml` → dependency and project metadata
+
+---
+
+## Build & Run
+
+With Cargo (recommended):
 
 ```bash
+# Build in release mode
+cargo build --release
+
+# Run the project
+cargo run
+```
+
+Directly with rustc (quick test):
+
+```bash
+rustc src/main.rs -o main
 ./main
 ```
-now say something like "idk"
+
+---
+
+## Development Workflow
+
+1. **Format code on save** (VSCode or manually):
+
+```bash
+cargo fmt
+```
+
+2. **Lint with Clippy**:
+
+```bash
+cargo clippy
+```
+
+3. **Follow Conventional Commits**:
+
+- `feat:` → new feature
+- `fix:` → bug fix
+- `chore:` → project structure, tooling, etc.
+- `style:` → formatting changes
+- `refactor:` → refactoring without changing behavior
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit with Conventional Commits
+4. Push and open a Pull Request
+
+---
+
+## License
+
+[MIT](LICENSE)
