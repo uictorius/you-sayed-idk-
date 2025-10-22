@@ -2,7 +2,7 @@
 name = "you-sayed-idk-"
 version = "2.0.1"
 edition = "2024"
-description = "A simple Rust program that detects variations of 'idk' in user input."
+description = "A Rust-based command-line shell that integrates system command execution (like ls and echo) with unique text recognition features (like variations of 'idk')."
 license = "MIT"
 repository = "https://github.com/uictorius/you-sayed-idk-"
 documentation = "https://github.com/uictorius/you-sayed-idk-/blob/main/README.md"
@@ -19,4 +19,4 @@ fmt = "fmt --all"
 [package.metadata.release]
 sign-tag = true
 push = true
-tag-prefix = ""
+tag-prefix = "v"
