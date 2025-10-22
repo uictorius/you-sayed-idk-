@@ -1,6 +1,7 @@
 use crate::translations::Language;
 use colored::*;
 use locale_config::Locale;
+use std::io::{self, Write};
 
 // Detecta idioma do sistema
 pub fn detect_language() -> Language {
@@ -25,8 +26,11 @@ pub fn detect_language() -> Language {
 // Imprime texto colorido
 pub fn print(text: &str, color: &str) {
     match color {
+        // 'print!' sem quebra de linha para o prompt
+        "green" => print!("{}", text.green().bold()),
+
+        // 'println!' com quebra de linha para outras cores
         "red" => println!("{}", text.red()),
-        "green" => println!("{}", text.green()),
         "yellow" => println!("{}", text.yellow()),
         "blue" => println!("{}", text.blue()),
         "magenta" => println!("{}", text.magenta()),
@@ -34,4 +38,7 @@ pub fn print(text: &str, color: &str) {
         "white" => println!("{}", text.white()),
         _ => println!("{}", text),
     }
+
+    // Garante que o buffer seja limpo imediatamente
+    io::stdout().flush().unwrap();
 }

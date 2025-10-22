@@ -2,7 +2,7 @@
 mod translations;
 use translations::Messages;
 
-mod checks;
+mod commands;
 mod print;
 use print::{detect_language, print};
 
