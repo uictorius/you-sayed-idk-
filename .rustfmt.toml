@@ -3,4 +3,3 @@ hard_tabs = false            # usar espaços em vez de tabs
 edition = "2021"             # edição do Rust
 use_small_heuristics = "Max" # distribui linhas longas de forma inteligente
 fn_call_width = 60           # comprimento máximo para chamadas de função antes de quebrar
-fn_def_width = 60            # comprimento máximo para definição de função
