@@ -8,31 +8,31 @@ fn main() {
 
     let input = input.trim();
 
-    if check_idk_simples(&input) {
+    if check_idk_simples(input) {
         println!("Você disse 'idk'.");
-    } else if check_idka_simples(&input) {
+    } else if check_idka_simples(input) {
         println!("Você disse 'idka'.");
-    } else if check_ideka_simples(&input) {
+    } else if check_ideka_simples(input) {
         println!("Você disse 'ideka'.");
-    } else if check_idk_depressivo_simples(&input) {
+    } else if check_idk_depressivo_simples(input) {
         println!(
             "Sinto muito que você esteja se sentindo assim. Lembre-se que você não está sozinho."
         );
-    } else if check_idk_exclamacao(&input) {
+    } else if check_idk_exclamacao(input) {
         println!("Você disse 'idk' com exclamação.");
-    } else if check_idk_interrogacao(&input) {
+    } else if check_idk_interrogacao(input) {
         println!("Você disse 'idk' com interrogação.");
-    } else if check_idk_reticencias(&input) {
+    } else if check_idk_reticencias(input) {
         println!("Você disse 'idk' com reticências.");
-    } else if check_idk_depressivo_exclamacao(&input) {
+    } else if check_idk_depressivo_exclamacao(input) {
         println!(
             "Sinto muito que você esteja se sentindo assim! Lembre-se que você não está sozinho! Procure ajuda se precisar."
         );
-    } else if check_idk_depressivo_interrogacao(&input) {
+    } else if check_idk_depressivo_interrogacao(input) {
         println!(
             "Você está perguntando se está se sentindo deprimido? É importante conversar com alguém."
         );
-    } else if check_idk_depressivo_reticencias(&input) {
+    } else if check_idk_depressivo_reticencias(input) {
         println!("Parece que você está refletindo sobre seus sentimentos. Estou aqui para ouvir.");
     } else {
         println!("Não entendi o que você disse.");
