@@ -1,6 +1,27 @@
-
-
-# Added by cargo
-
+# Rust build artifacts
 /target
+**/*.rs.bk
+*.rmeta
+*.rlib
+
+# Cargo
 Cargo.lock
+
+# Binaries
+main
+*.exe           # Windows
+*.out
+
+# IDEs / editors
+#.vscode/   
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+*.tmp
