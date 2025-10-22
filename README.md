@@ -5,46 +5,41 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Release](https://img.shields.io/github/v/release/uictorius/you-sayed-idk-?label=release)](https://github.com/uictorius/you-sayed-idk-/releases)
 
-A program to read a line of text and verify if the input is a variation of "idk".
+A Rust program that reads a line of text and checks if the input is a variation of `"idk"`.  
+It supports multiple languages and recognizes variations like:
 
-It can identify variations like:
-
-- `idk`, `Idk`, `iDK`, etc.
-- `idka`, `ikd!`, etc.
+- `idk`, `Idk`, `iDK`
+- `idka`, `ikd!`
 - `idkdepressivo`
 
 ---
 
-## Credits
+## Features
 
-This project is based on the original work by [thz-afk](https://github.com/thz-afk/you-sayed-idk-).
-
-Thank you for creating this amazing tool!
-
----
-
-## Recommended VSCode Setup
-
-For the best experience, it is recommended to use **VSCode** with these extensions:
-
-- [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) → language support, formatting, Clippy integration
-- [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) → TOML syntax highlighting
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) → auto-format Markdown, JSON, YAML, and other files
-
-Project settings are included in `.vscode/settings.json`:
-
-- Auto-format Rust, TOML, Markdown, JSON, and YAML on save
-- Run Clippy on Rust files when saving
-- YAML files recognized for `.yml` and `.yaml`
+- Multi-language support (i18n)
+- Input validation with multiple "idk" variations
+- Colored console output
+- Pre-commit hooks for formatting and linting
+- Easy extension for new languages
 
 ---
 
-## Requirements
+## Supported Languages
 
-- Rust toolchain via [rustup](https://rustup.rs/)
-- Recommended tools:
-  - `cargo fmt` → format code
-  - `cargo clippy` → lint and suggestions
+| Language             | Code | File           |
+| -------------------- | ---- | -------------- |
+| Arabic               | `ar` | `i18n/ar.toml` |
+| Bengali              | `bn` | `i18n/bn.toml` |
+| English              | `en` | `i18n/en.toml` |
+| Spanish              | `es` | `i18n/es.toml` |
+| Hindi                | `hi` | `i18n/hi.toml` |
+| Japanese             | `ja` | `i18n/ja.toml` |
+| Punjabi              | `pa` | `i18n/pa.toml` |
+| Portuguese           | `pt` | `i18n/pt.toml` |
+| Russian              | `ru` | `i18n/ru.toml` |
+| Chinese (Simplified) | `zh` | `i18n/zh.toml` |
+
+> The system automatically detects the OS language. Default fallback is English (`en`).
 
 ---
 
@@ -78,13 +73,14 @@ you-sayed-idk-/
 ```
 
 - `src/main.rs` → main entry point
-- `Cargo.toml` → dependency and project metadata
+- `i18n/` → translation files
+- `src/` → modularized code (checks, printing, prompts, translations)
 
 ---
 
 ## Build & Run
 
-With Cargo (recommended):
+**Using Cargo (recommended):**
 
 ```bash
 # Build in release mode
@@ -94,87 +90,65 @@ cargo build --release
 cargo run
 ```
 
-Directly with rustc (quick test):
-
-```bash
-rustc src/main.rs -o main
-./main
-```
-
 ---
 
 ## Development Workflow
 
-1. **Format code on save** (VSCode or manually):
+1. **Format code**:
 
 ```bash
 cargo fmt
 ```
 
-2. **Lint with Clippy**:
+2. **Lint code**:
 
 ```bash
 cargo clippy
 ```
 
-3. **Follow Conventional Commits**:
+3. **Use Conventional Commits**:
 
 - `feat:` → new feature
 - `fix:` → bug fix
-- `chore:` → project structure, tooling, etc.
+- `chore:` → project structure/tooling
 - `style:` → formatting changes
-- `refactor:` → refactoring without changing behavior
+- `refactor:` → refactoring without behavior change
 
 ---
 
 ## Git Hooks (Automatic Formatting & Linting)
 
-To ensure consistent code quality across all environments, this project uses a versioned **Git hook** stored in `.githooks/pre-commit`.
-The hook automatically runs `cargo fmt` and `cargo clippy` before each commit.
+To enforce code quality, the project uses versioned **pre-commit hooks** in `.githooks/pre-commit`.
+These hooks automatically run `cargo fmt` and `cargo clippy`.
 
-### Setup
-
-After cloning the repository, run:
+**Setup:**
 
 ```bash
 git config core.hooksPath .githooks
 ```
 
-This tells Git to use the versioned hook directory instead of the default `.git/hooks/`.
-
-You only need to do this once per local clone.
-After that, every commit will automatically check formatting and linting.
-
 ---
 
-## Internationalization (i18n)
+## Releasing a New Version
 
-The project now includes full multi-language support.
+Uses [`cargo-release`](https://github.com/crate-ci/cargo-release) for versioning and publishing.
 
-All user-facing messages are stored in the `i18n/` directory, each language using a `.toml` file.  
-The application automatically detects the system language and loads the appropriate translation file.
+```bash
+# Install cargo-release if needed
+cargo install cargo-release
 
-### Supported languages
+# Dry-run a release
+cargo release 2.0.0 --dry-run
 
-| Language             | Code | File           |
-| -------------------- | ---- | -------------- |
-| Arabic               | `ar` | `i18n/ar.toml` |
-| Bengali              | `bn` | `i18n/bn.toml` |
-| English              | `en` | `i18n/en.toml` |
-| Spanish              | `es` | `i18n/es.toml` |
-| Hindi                | `hi` | `i18n/hi.toml` |
-| Japanese             | `ja` | `i18n/ja.toml` |
-| Punjabi              | `pa` | `i18n/pa.toml` |
-| Portuguese           | `pt` | `i18n/pt.toml` |
-| Russian              | `ru` | `i18n/ru.toml` |
-| Chinese (Simplified) | `zh` | `i18n/zh.toml` |
+# Release the version
+cargo release 2.0.0
+```
 
-If the system language is not recognized, the default fallback is **English (en)**.
+**Notes:**
 
-Developers can easily extend support for new languages by:
-
-1. Creating a new `.toml` file inside `i18n/`.
-2. Adding the corresponding language code in `translations.rs`.
+- Ensure all changes are committed
+- Confirm `Cargo.toml` includes `description`, `license`, and `repository`
+- Run `cargo fmt` and `cargo clippy` before releasing
 
 ---
 
@@ -182,11 +156,12 @@ Developers can easily extend support for new languages by:
 
 1. Fork the repository
 2. Create a feature branch
-3. Commit with Conventional Commits
+3. Commit using Conventional Commits
 4. Push and open a Pull Request
 
 ---
 
-## License
+## Credits
 
-[MIT](LICENSE)
+Original project by [thz-afk](https://github.com/thz-afk/you-sayed-idk-).
+Enhanced with multi-language support and modular architecture.
