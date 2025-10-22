@@ -15,6 +15,14 @@ It can identify variations like:
 
 ---
 
+## Credits
+
+This project is based on the original work by [thz-afk](https://github.com/thz-afk/you-sayed-idk-).
+
+Thank you for creating this amazing tool!
+
+---
+
 ## Recommended VSCode Setup
 
 For the best experience, it is recommended to use **VSCode** with these extensions:
